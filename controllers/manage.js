@@ -15,7 +15,7 @@ module.exports = function (router) {
             };
 
             res.render('manage/books/index',model);
-        })
+        });
     });
 
 
@@ -35,7 +35,7 @@ module.exports = function (router) {
             };
 
             res.render('manage/categories/index',model);
-        })
+        });
     });
 
 
@@ -53,7 +53,7 @@ module.exports = function (router) {
         });
     });
 
-
+    //Add a new  Book
     router.post('/books',function(req,res){
         var title = req.body.title && req.body.title.trim();
         var category = req.body.category && req.body.category.trim();

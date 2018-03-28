@@ -15,11 +15,12 @@
                             <th width="100">Quantity</th>
                             <th width="100">Total</th>
                             <th width="100"></th>
+                        </tr>
                     </thead>
                     <tbody>
                         {#cart.items}
                             <tr>
-                                <td><a href="books/details/{._id}">{.title}</a></td>
+                                <td><a href="books/details/{.item}">{.title}</a></td>
                                 <td>{.qty}</td>
                                 <td>${@math key="{.price}" method="multiply" operand="{.qty}" /}</td>
                             </tr>
@@ -49,9 +50,9 @@
                             <!-- Return method -->
                             <input type="hidden" name="rm" value='2'>
                             <!--Return URL-->
-                            <input type="hidden" name="return" value="http://localhost:8000">
+                            <input type="hidden" name="return" value="process.env.PORT || http://localhost:8000">
                             <!--Cancel Return URL -->
-                            <input type="hidden" name="cancel_return" value="http://localhost:8000">
+                            <input type="hidden" name="cancel_return" value="process.env.PORT || http://localhost:8000">
 
                             <!-- Button -->
                             <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif
